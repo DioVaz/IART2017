@@ -1,0 +1,38 @@
+37
+Requisitos do sistema de informação baseado na web.
+Modelo conceptual de dados do sistema de informação.
+Esquema lógico relacional da base de dados do sistema.
+Esquema físico de uma base de dados.
+Afinar o esquema lógico relacional.
+Desenhar e implementar interrogações para acesso a bases de dados.
+Mecanismos para a manutenção da integridade dos dados.
+Especificar as interfaces web.
+Especificar a lógica de negócio do sistema de informação.
+Implementar os componentes web do sistema.
+PHP
+HTML
+CSS
+JavaScript
+UML
+SQL
+Assegurar que as interfaces web estão de acordo com as normas de acessibilidade.
+Assegurar que as interfaces web estão de acordo com as normas de usabilidade.
+Desenvolvimento de uma aplicação Web suportada por uma Base de Dados.
+Levantamento de requisitos
+Arquitetura de aplicações Web.
+Clientes.
+Servidores.
+Apresentação do Document Object Model (DOM).
+AJAX
+Frameworks
+API's de acesso a dados.
+Extensões procedimentais à linguagem SQL.
+Linguagens de modelação de dados.
+Identificação e manutenção de regras de negócio.
+Lógica de negócio nas interfaces.
+Transações na base de dados.
+Usabilidade e acessibilidade Web.
+Smarty
+PostgreSQL
+jQuery
+Bootstrap

@@ -10,9 +10,11 @@ package iart2017.gerador;
  * @author Diogo
  */
 public class Tema {
-    String id;
+    int id;
+    String description;
     
-    public Tema(String ID){
+    public Tema(int ID, String description){
         this.id = ID;
+        this.description = description;
     }
 }

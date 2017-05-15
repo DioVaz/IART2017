@@ -17,10 +17,18 @@ public class Programa {
     
     Sessao[][] sessoes;
 
-    public Programa(int multiplas,int num_sessoes) {
+    public Programa(int multiplas,int num_sessoes, DataBase db) {
         this.multiplas = multiplas;
         this.num_sessoes = num_sessoes;
         this.sessoes = new Sessao[multiplas][num_sessoes];
+        
+        /*
+        todo:
+            get x temas
+            preencher sessões com apresentações
+            avaliar
+            melhorar
+        */
     }
     
     

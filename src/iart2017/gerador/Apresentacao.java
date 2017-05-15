@@ -17,6 +17,19 @@ public class Apresentacao {
     boolean fullpaper;
     
     public Apresentacao(int id,Autor[] autores, Tema[] temas,boolean fullpaper){
+        this.ID = id;
+        this.aprentador=autores[0];
+        this.coautores = autores;
+        this.temas=temas;
+        this.fullpaper=fullpaper;
+    }
     
+    public boolean has_tema(Tema tema){
+        for (Tema tema1 : temas) {
+            if (tema == tema1) {
+                return true;
+            }
+        }
+        return false;
     }
 }

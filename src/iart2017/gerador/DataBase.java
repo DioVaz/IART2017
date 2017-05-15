@@ -29,7 +29,7 @@ public class DataBase {
     static Autor[] autores;
     static Tema[] temas;
     
-    public DataBase(int num_apresentacoes,int num_temas_per_apresentacao, int num_autores_per_apresentacao,int full_percentage){
+    public DataBase(int num_apresentacoes,int num_temas_per_apresentacao, int num_autores_per_apresentacao,float full_percentage){
         read_autores_file();
         read_temas_file();
         generate_apresentacoes(num_apresentacoes,num_temas_per_apresentacao,num_autores_per_apresentacao,full_percentage);      
@@ -70,7 +70,7 @@ public class DataBase {
             while ((line = br.readLine()) != null) {
                 // process the line.
                 System.out.println(line);
-                Tema novo = new Tema(line);
+                Tema novo = new Tema(i, line);
                 temas[i]=novo;
                 i++;
                 }
@@ -79,9 +79,9 @@ public class DataBase {
         }
     }
     
-    static void generate_apresentacoes(int num_apresentacoes,int num_temas_per_apresentacao,int num_autores_per_apresentacao,int full_percentage){
+    static void generate_apresentacoes(int num_apresentacoes,int num_temas_per_apresentacao,int num_autores_per_apresentacao,float full_percentage){
         apresentacoes = new Apresentacao[num_apresentacoes];
-        int number_fullpapers = num_apresentacoes/full_percentage;
+        float number_fullpapers = num_apresentacoes*full_percentage;
         for (int i =0;i<num_apresentacoes;i++){
             boolean fullpaper = (i<number_fullpapers);
             int[] temas_id = new int[num_temas_per_apresentacao];
@@ -108,10 +108,36 @@ public class DataBase {
         }
     }
     
+    public Tema[] get_temas(int num_temas){
+        Tema[] temas = new Tema[num_temas];
+        int[] temas_id = new int[num_temas];
+        for(int j =0;j<num_temas;){
+            int tema = (int)(Math.random() * (temas.length));
+            if(check_input(tema,temas_id)){
+                temas_id[j]=tema;
+                temas[j]=temas[tema-1];
+                j++;
+            }
+        }
+        return temas;
+    } 
+    
     static boolean check_input(int input, int[] list){
         for (int i = 0; i< list.length;i++){
             if(list[i]==input){return false;}
         }
         return true;
+    }
+    
+    public Apresentacao[] get_Apresentacoes(Tema tema){
+        Apresentacao[] results = null;
+        int j=0;
+        for (Apresentacao apresentacoe : apresentacoes) {
+            if (apresentacoe.has_tema(tema)) {
+                results[j] = apresentacoe;
+                j++;
+            }
+        }
+        return results;
     }
 }
